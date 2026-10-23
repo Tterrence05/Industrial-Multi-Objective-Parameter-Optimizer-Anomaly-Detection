@@ -9,12 +9,12 @@ This platform integrates **Evolutionary Multi-Objective Optimization (NSGA-II)**
 
 ## 📐 System Architecture
 
-```mermaid
+
 graph TD
     A[Real-Time Telemetry Stream\nRPM, Flow, Temp, Vib] --> B[Isolation Forest Guardrail\nAnomaly Detection & Health Score]
     B --> C{Safety Constraint Check}
     C -->|Valid / Penalty Factor| D[NSGA-II Multi-Objective Solver\nPyMoo Engine]
-    E[User Inputs & What-If Scenarios\nTarget Output, Electricity Cost, Ambient Temp] --> D
+    E -->[User Inputs & What-If Scenarios\nTarget Output, Electricity Cost, Ambient Temp] --> D
     D --> F[Pareto Optimal Solution Set\n2D/3D Pareto Surfaces]
     F --> G[MCDM & Strategy Selector\nMin Power, Min Vibration, Balanced]
     G --> H[Financial ROI & Lifespan Estimator]
